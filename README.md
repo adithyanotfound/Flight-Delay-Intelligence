@@ -4,9 +4,9 @@ An end-to-end aviation analytics system, delay driver diagnostic engine, machine
 
 ---
 
-## 🛫 System Overview
+## System Overview
 
-![Flight Delay Intelligence Banner](dashboard/assets/flight_banner.jpg)
+<img width="1265" height="763" alt="Screenshot 2026-09-20 at 4 59 28 PM" src="https://github.com/user-attachments/assets/1450932f-d1b3-4618-81ac-835e0bde78c0" />
 
 This platform analyzes **5,842,367 commercial domestic flight operations** to uncover the structural causes of flight delays, evaluate spatiotemporal bottleneck hubs, predict flight delays using machine learning, and deliver executive-ready operational recommendations.
 
