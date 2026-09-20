@@ -1,0 +1,15 @@
+{
+  "name": "flight-delay-intelligence",
+  "version": "1.0.0",
+  "description": "Flight Delay Intelligence and Operations Dashboard using US BTS On-Time Performance Data",
+  "scripts": {
+    "dev": "python3 server.py",
+    "start": "python3 server.py",
+    "pipeline": "python3 python/data_pipeline.py",
+    "analyze": "python3 python/analyze_drivers.py",
+    "train": "python3 ml/train_model.py"
+  },
+  "keywords": ["aviation", "flight-delays", "bts", "powerbi", "machine-learning"],
+  "author": "Antigravity AI",
+  "license": "MIT"
+}

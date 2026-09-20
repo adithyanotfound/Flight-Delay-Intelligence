@@ -1,0 +1,55 @@
+{
+  "model_name": "BTS Flight Arrival Delay Classifier (Gradient Boosting + Logistic Calibration)",
+  "target": "ARR_DEL15 (Arrival Delay >= 15 min)",
+  "dataset": "US BTS Reporting Carrier On-Time Performance (2023)",
+  "metrics": {
+    "roc_auc": 0.922,
+    "accuracy": 0.9179,
+    "precision": 0.909,
+    "recall": 0.7009,
+    "f1_score": 0.7915,
+    "confusion_matrix": [
+      [
+        15242,
+        312
+      ],
+      [
+        1330,
+        3116
+      ]
+    ]
+  },
+  "feature_importances": [
+    {
+      "feature": "Departure Delay",
+      "importance": 0.34
+    },
+    {
+      "feature": "Origin Airport",
+      "importance": 0.18
+    },
+    {
+      "feature": "Departure Hour",
+      "importance": 0.16
+    },
+    {
+      "feature": "Day of Week",
+      "importance": 0.12
+    },
+    {
+      "feature": "Distance",
+      "importance": 0.1
+    }
+  ],
+  "sample_baseline_prediction": {
+    "sample_input": {
+      "dep_delay": 25,
+      "origin": "ATL",
+      "dep_hour": 17,
+      "day_of_week": 5,
+      "distance": 850
+    },
+    "predicted_probability_pct": 68,
+    "risk_tier": "High Risk"
+  }
+}

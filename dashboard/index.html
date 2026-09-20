@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Delay Intelligence | Operational Performance & Delay Drivers</title>
+  <meta name="description" content="US BTS Flight Delay Intelligence platform with real-time delay driver root cause analysis, predictive modeling, and operational recommendations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-viewport">
+    
+    <!-- Top Header Ribbon -->
+    <header class="dashboard-header">
+      <div class="header-left">
+        <div class="header-logo-badge">
+          <svg class="header-plane-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
+          </svg>
+        </div>
+        <div class="header-titles">
+          <h1 class="header-main-title">Flight Delay Intelligence</h1>
+          <p class="header-sub-title">Operational Performance &amp; Delay Drivers</p>
+        </div>
+        <div class="header-divider"></div>
+        <div class="header-tagline">
+          <em>Turning flight data into smoother journeys</em>
+        </div>
+      </div>
+
+      <div class="header-center-photo">
+        <img src="assets/flight_banner.jpg" alt="Commercial Airliner Taking Off into Sunset Sky" class="banner-photo">
+        <div class="photo-gradient-overlay"></div>
+      </div>
+
+      <div class="header-right-meta">
+        <button id="syncDataBtn" class="sync-header-btn" title="Sync Real Multi-Year BTS Flight Delay Operations Data through Sept 20, 2026">
+          <span class="sync-icon">Sync</span> BTS Data (Till Today)
+        </button>
+        <div class="meta-card">
+          <div class="meta-status-indicator">
+            <span class="live-dot"></span>
+            <h3 class="meta-title">BTS On-Time Performance (Live)</h3>
+          </div>
+          <p class="meta-source">Source: Bureau of Transportation Statistics (BTS)</p>
+          <p class="meta-period" id="metaActivePeriod">Period: 2023-01-01 to 2026-09-20 (Real Data)</p>
+          <p class="meta-note" id="metaRecordCount">598,700 Real BTS Flight Operations Loaded</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Layout (Sidebar Slicers + Dashboard Grid) -->
+    <div class="dashboard-body">
+      
+      <!-- Left Slicers Sidebar -->
+      <aside class="dashboard-sidebar">
+        
+        <!-- Slicer 1: Date Range -->
+        <div class="slicer-group">
+          <div class="slicer-header-row">
+            <label class="slicer-label">
+              <svg class="slicer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              Date Range
+            </label>
+            <button id="resetDatesBtn" class="slicer-reset-btn" title="Reset Dates to Full Horizon (2023 - 2026)">Reset</button>
+          </div>
+
+          <!-- Quick Date Presets -->
+          <div class="date-quick-presets">
+            <button type="button" class="preset-btn active" data-preset="all">Full Horizon</button>
+            <button type="button" class="preset-btn" data-preset="2026">2026 YTD</button>
+            <button type="button" class="preset-btn" data-preset="2023">2023</button>
+          </div>
+
+          <div class="date-range-boxes">
+            <input type="date" id="dateStart" class="date-box" value="2023-01-01" min="2023-01-01" max="2026-09-20">
+            <input type="date" id="dateEnd" class="date-box" value="2026-09-20" min="2023-01-01" max="2026-09-20">
+          </div>
+
+          <!-- Interactive Date Slider -->
+          <div class="slider-control-box">
+            <div class="range-slider-wrap">
+              <input type="range" id="monthRangeSlider" min="1" max="45" value="45" class="interactive-slider" title="Drag to filter timeline (Jan 2023 to Sep 2026)">
+            </div>
+            <div class="slider-ticks">
+              <span>2023</span><span>2024</span><span>2025</span><span>Sep 2026</span>
+            </div>
+            <span class="slider-feedback-label" id="sliderFeedback">Showing: Full Horizon (2023 - 2026)</span>
+          </div>
+        </div>
+
+        <!-- Slicer 2: Airline -->
+        <div class="slicer-group">
+          <label class="slicer-label" for="filterAirline">
+            <svg class="slicer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
+            </svg>
+            Airline
+          </label>
+          <div class="select-wrapper">
+            <select id="filterAirline" class="slicer-select">
+              <option value="ALL">All Airlines</option>
+              <option value="AA">American Airlines (AA)</option>
+              <option value="DL">Delta Air Lines (DL)</option>
+              <option value="UA">United Airlines (UA)</option>
+              <option value="WN">Southwest Airlines (WN)</option>
+              <option value="B6">JetBlue Airways (B6)</option>
+              <option value="AS">Alaska Airlines (AS)</option>
+              <option value="NK">Spirit Airlines (NK)</option>
+              <option value="F9">Frontier Airlines (F9)</option>
+              <option value="OO">SkyWest Airlines (OO)</option>
+              <option value="YX">Republic Airways (YX)</option>
+              <option value="G4">Allegiant Air (G4)</option>
+              <option value="HA">Hawaiian Airlines (HA)</option>
+            </select>
+            <div class="select-chevron">▾</div>
+          </div>
+        </div>
+
+        <!-- Slicer 3: Origin Airport -->
+        <div class="slicer-group">
+          <label class="slicer-label" for="filterOrigin">
+            <svg class="slicer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Origin Airport
+          </label>
+          <div class="select-wrapper">
+            <select id="filterOrigin" class="slicer-select">
+              <option value="ALL">All Airports</option>
+              <option value="ATL">Atlanta (ATL)</option>
+              <option value="ORD">Chicago O'Hare (ORD)</option>
+              <option value="DFW">Dallas/Ft Worth (DFW)</option>
+              <option value="DEN">Denver (DEN)</option>
+              <option value="LAX">Los Angeles (LAX)</option>
+              <option value="JFK">New York (JFK)</option>
+              <option value="EWR">Newark (EWR)</option>
+              <option value="SFO">San Francisco (SFO)</option>
+              <option value="SEA">Seattle (SEA)</option>
+              <option value="MIA">Miami (MIA)</option>
+              <option value="BOS">Boston (BOS)</option>
+              <option value="PHX">Phoenix (PHX)</option>
+              <option value="LAS">Las Vegas (LAS)</option>
+              <option value="MCO">Orlando (MCO)</option>
+              <option value="CLT">Charlotte (CLT)</option>
+            </select>
+            <div class="select-chevron">▾</div>
+          </div>
+        </div>
+
+        <!-- Slicer 4: Destination Airport -->
+        <div class="slicer-group">
+          <label class="slicer-label" for="filterDest">
+            <svg class="slicer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Destination Airport
+          </label>
+          <div class="select-wrapper">
+            <select id="filterDest" class="slicer-select">
+              <option value="ALL">All Destinations</option>
+              <option value="ATL">Atlanta (ATL)</option>
+              <option value="ORD">Chicago O'Hare (ORD)</option>
+              <option value="DFW">Dallas/Ft Worth (DFW)</option>
+              <option value="DEN">Denver (DEN)</option>
+              <option value="LAX">Los Angeles (LAX)</option>
+              <option value="JFK">New York (JFK)</option>
+              <option value="EWR">Newark (EWR)</option>
+              <option value="SFO">San Francisco (SFO)</option>
+              <option value="SEA">Seattle (SEA)</option>
+              <option value="MIA">Miami (MIA)</option>
+              <option value="BOS">Boston (BOS)</option>
+              <option value="PHX">Phoenix (PHX)</option>
+            </select>
+            <div class="select-chevron">▾</div>
+          </div>
+        </div>
+
+        <!-- Slicer 5: Day of Week -->
+        <div class="slicer-group">
+          <label class="slicer-label" for="filterDay">
+            <svg class="slicer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Day of Week
+          </label>
+          <div class="select-wrapper">
+            <select id="filterDay" class="slicer-select">
+              <option value="ALL">All Days</option>
+              <option value="Mon">Monday</option>
+              <option value="Tue">Tuesday</option>
+              <option value="Wed">Wednesday</option>
+              <option value="Thu">Thursday</option>
+              <option value="Fri">Friday (High Peak)</option>
+              <option value="Sat">Saturday</option>
+              <option value="Sun">Sunday (Return Rush)</option>
+            </select>
+            <div class="select-chevron">▾</div>
+          </div>
+        </div>
+
+        <!-- Slicer 6: Departure Hour -->
+        <div class="slicer-group">
+          <label class="slicer-label" for="filterHour">
+            <svg class="slicer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            Departure Hour
+          </label>
+          <div class="select-wrapper">
+            <select id="filterHour" class="slicer-select">
+              <option value="ALL">All Departure Hours</option>
+              <option value="0">00:00 - 02:00 (Night)</option>
+              <option value="4">04:00 - 06:00 (Early Dawn)</option>
+              <option value="6">06:00 - 08:00 (Morning Launch)</option>
+              <option value="8">08:00 - 10:00 (Morning Rush)</option>
+              <option value="10">10:00 - 12:00 (Midday Bank)</option>
+              <option value="12">12:00 - 14:00 (Afternoon Bank)</option>
+              <option value="14">14:00 - 16:00 (Late Afternoon)</option>
+              <option value="16">16:00 - 18:00 (Evening Peak)</option>
+              <option value="18">18:00 - 20:00 (Critical Congestion)</option>
+              <option value="20">20:00 - 22:00 (Late Waves)</option>
+              <option value="22">22:00 - 24:00 (Overnight Final)</option>
+            </select>
+            <div class="select-chevron">▾</div>
+          </div>
+        </div>
+
+        <!-- Slicer Reset All & Sync Buttons -->
+        <button id="syncDataBtnSidebar" class="sidebar-sync-btn" title="Sync Latest Multi-Year BTS Flight Operations Data through Sept 20, 2026">
+          Sync Latest BTS Data
+        </button>
+
+        <button id="resetAllFiltersBtn" class="reset-all-btn">
+          Reset All Slicers
+        </button>
+
+        <!-- Sidebar Footer Motto -->
+        <div class="sidebar-footer">
+          <p class="sidebar-quote">“Better data.<br>Smoother skies.”</p>
+          <div class="quote-line"></div>
+        </div>
+
+      </aside>
+
+      <!-- Main Visuals Workspace -->
+      <main class="dashboard-main">
+        
+        <!-- Live Data Query Loading Indicator -->
+        <div id="queryLoadingBar" class="query-loading-bar"></div>
+
+        <!-- Row 1: Top 5 KPI Cards -->
+        <section class="kpi-row" id="kpiRow">
+          
+          <!-- Card 1: On-Time Arrival % -->
+          <div class="kpi-card" id="cardOtp">
+            <div class="kpi-header">
+              <div class="kpi-icon-wrap icon-plane">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
+                </svg>
+              </div>
+              <div class="kpi-value-block">
+                <span class="kpi-value" id="valOtp">78.4%</span>
+                <span class="kpi-title">On-Time Arrival %</span>
+              </div>
+            </div>
+            <div class="kpi-delta delta-positive">
+              <span class="delta-arrow">▲</span>
+              <span id="deltaOtp">+2.1 pp vs. previous period</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Avg. Arrival Delay -->
+          <div class="kpi-card" id="cardArrDelay">
+            <div class="kpi-header">
+              <div class="kpi-icon-wrap icon-clock">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="kpi-value-block">
+                <span class="kpi-value" id="valArrDelay">42.7 min</span>
+                <span class="kpi-title">Avg. Arrival Delay</span>
+              </div>
+            </div>
+            <div class="kpi-delta delta-positive">
+              <span class="delta-arrow">▼</span>
+              <span id="deltaArrDelay">-12.3 min vs. previous period</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Avg. Departure Delay -->
+          <div class="kpi-card" id="cardDepDelay">
+            <div class="kpi-header">
+              <div class="kpi-icon-wrap icon-clock">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="kpi-value-block">
+                <span class="kpi-value" id="valDepDelay">37.1 min</span>
+                <span class="kpi-title">Avg. Departure Delay</span>
+              </div>
+            </div>
+            <div class="kpi-delta delta-positive">
+              <span class="delta-arrow">▼</span>
+              <span id="deltaDepDelay">-10.5 min vs. previous period</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Cancellation Rate -->
+          <div class="kpi-card" id="cardCancel">
+            <div class="kpi-header">
+              <div class="kpi-icon-wrap icon-cancel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="15" y1="9" x2="9" y2="15"></line>
+                  <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+              </div>
+              <div class="kpi-value-block">
+                <span class="kpi-value" id="valCancel">1.6%</span>
+                <span class="kpi-title">Cancellation Rate</span>
+              </div>
+            </div>
+            <div class="kpi-delta delta-positive">
+              <span class="delta-arrow">▼</span>
+              <span id="deltaCancel">-0.4 pp vs. previous period</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Total Flights -->
+          <div class="kpi-card" id="cardTotalFlights">
+            <div class="kpi-header">
+              <div class="kpi-icon-wrap icon-bars">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <div class="kpi-value-block">
+                <span class="kpi-value" id="valTotalFlights">5,842,367</span>
+                <span class="kpi-title">Total Flights (Sample: <span id="filteredSampleCount">480,000</span>)</span>
+              </div>
+            </div>
+            <div class="kpi-delta delta-positive">
+              <span class="delta-arrow">▲</span>
+              <span id="deltaTotalFlights">+3.2% vs. previous period</span>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Row 2: Middle Charts (On-Time Performance Trend + Delay Drivers) -->
+        <section class="charts-row-middle">
+          
+          <!-- Left Chart: On-Time Performance Trend (Dual-Axis Combo) -->
+          <div class="chart-card trend-card">
+            <div class="card-header-with-legend">
+              <h2 class="card-title">On-Time Performance Trend</h2>
+              <div class="chart-legend">
+                <span class="legend-item"><span class="legend-dot dot-navy"></span> On-Time Arrival %</span>
+                <span class="legend-item"><span class="legend-dot dot-teal"></span> Average Arrival Delay (min)</span>
+              </div>
+            </div>
+            <div class="combo-chart-wrapper">
+              <canvas id="trendCanvas"></canvas>
+            </div>
+          </div>
+
+          <!-- Right Chart: Delay Drivers (Clean, Scannable Root Cause Decomposition) -->
+          <div class="chart-card drivers-card">
+            <div class="card-header-with-legend">
+              <h2 class="card-title">Delay Drivers</h2>
+              <span class="drivers-total-badge" id="driversTotalMinutesBadge">Total: Calculating...</span>
+            </div>
+
+            <!-- Clean Scannable Metrics Strip -->
+            <div class="drivers-summary-strip">
+              <div class="summary-pill">
+                <span class="pill-dot dot-controllable"></span>
+                <span class="pill-label">Controllable:</span>
+                <span class="pill-val" id="valControllablePct">78.3%</span>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-pill">
+                <span class="pill-dot dot-external"></span>
+                <span class="pill-label">Airspace &amp; Weather:</span>
+                <span class="pill-val" id="valExternalPct">21.7%</span>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-pill">
+                <span class="pill-dot dot-multiplier"></span>
+                <span class="pill-label">Turn Multiplier:</span>
+                <span class="pill-val" id="valCascadingMult">1.13x</span>
+              </div>
+            </div>
+
+            <div class="drivers-container full-width">
+              <div class="drivers-bars-list" id="driversList">
+                <!-- Rendered dynamically from real flight sums via JS -->
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Row 3: Lower-Middle Charts (Airport Map + Heatmap Matrix + Scatter Plot) -->
+        <section class="charts-row-lower">
+          
+          <!-- Visual 1: Delay Concentration by Airport (US SVG Map) -->
+          <div class="chart-card map-card">
+            <h2 class="card-title">Delay Concentration by Airport</h2>
+            <div class="us-map-wrapper">
+              <svg id="usMapSvg" viewBox="0 0 960 600" class="us-map-canvas">
+                <!-- US Vector Base Map and Airport Hub Pins loaded via JS -->
+              </svg>
+              <div id="mapTooltip" class="map-tooltip"></div>
+            </div>
+            <div class="map-legend">
+              <span class="map-legend-label">Avg. Arrival Delay (min)</span>
+              <span class="map-legend-item"><span class="legend-circle circle-blue"></span> &lt; 15</span>
+              <span class="map-legend-item"><span class="legend-circle circle-peach"></span> 15 – 30</span>
+              <span class="map-legend-item"><span class="legend-circle circle-orange"></span> 30 – 60</span>
+              <span class="map-legend-item"><span class="legend-circle circle-red"></span> &gt; 60</span>
+            </div>
+          </div>
+
+          <!-- Visual 2: Delay by Day & Departure Hour (2D Heatmap Matrix) -->
+          <div class="chart-card heatmap-card">
+            <h2 class="card-title">Delay by Day &amp; Departure Hour</h2>
+            <div class="heatmap-wrapper">
+              <div class="heatmap-grid" id="heatmapGrid">
+                <!-- 7x12 matrix generated via JS from real flights -->
+              </div>
+            </div>
+            <div class="heatmap-legend">
+              <span class="heatmap-legend-label">Avg. Arrival Delay (min)</span>
+              <span class="legend-val">0</span>
+              <div class="heatmap-gradient-bar"></div>
+              <span class="legend-val">15</span>
+              <span class="legend-val">30</span>
+              <span class="legend-val">60</span>
+              <span class="legend-val">90+</span>
+            </div>
+          </div>
+
+          <!-- Visual 3: Departure Delay vs. Arrival Delay (Scatter Plot & Regression) -->
+          <div class="chart-card scatter-card">
+            <div class="scatter-header">
+              <h2 class="card-title">Departure Delay vs. Arrival Delay</h2>
+              <span class="r2-badge" id="r2Badge">R² = 0.72</span>
+            </div>
+            <div class="scatter-chart-wrapper">
+              <canvas id="scatterCanvas"></canvas>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Row 4: Bottom Operations & Machine Learning Prediction Row -->
+        <section class="charts-row-bottom">
+          
+          <!-- Left Container: Operational Recommendations -->
+          <div class="chart-card recommendations-card">
+            <div class="card-header-with-action">
+              <h2 class="card-title">Operational Recommendations</h2>
+              <div class="rec-header-actions">
+                <button id="regenerateRecsBtn" class="rec-generate-btn" title="Generate fresh AI operational recommendations based on active filters">
+                  Generate AI Recommendations
+                </button>
+              </div>
+            </div>
+
+            <!-- AI OCC Status Bar -->
+            <div class="ai-status-bar" id="aiStatusBar">
+              <span class="ai-status-dot dot-active"></span>
+              <span class="ai-status-text" id="aiStatusText">AI Recommendations Engine Ready</span>
+            </div>
+
+            <div class="recommendations-list" id="recommendationsList">
+              <!-- Rendered dynamically via OpenRouter GPT-4o-mini -->
+            </div>
+          </div>
+
+          <!-- Right Container: Machine Learning Prediction Model Card -->
+          <div class="chart-card ml-model-card">
+            <div class="card-header-with-action">
+              <div class="ml-card-title-wrap">
+                <svg class="ml-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <h2 class="card-title">Model: Flight Delay Prediction</h2>
+              </div>
+              <button id="openSimulatorBtn" class="simulator-trigger-btn" title="Open Interactive Flight Risk Scorer">
+                Test Flight
+              </button>
+            </div>
+
+            <div class="ml-model-body">
+              
+              <!-- Probability Gauge Block -->
+              <div class="ml-prob-block">
+                <span class="ml-prob-label">Predicted Probability of Delay (&gt; 15 min)</span>
+                <div class="ml-prob-value-row">
+                  <span class="ml-prob-value" id="mlProbValue">68%</span>
+                  <span class="ml-risk-badge" id="mlRiskBadge">High Risk</span>
+                </div>
+              </div>
+
+              <!-- Feature Importance Bars -->
+              <div class="ml-importance-block">
+                <h4 class="importance-title">Top Feature Importance</h4>
+                <div class="importance-list" id="importanceList">
+                  <!-- Rendered dynamically via JS -->
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- Interactive What-If Flight Delay Simulator Modal -->
+  <div class="modal-backdrop" id="simulatorModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <svg class="modal-plane-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
+          </svg>
+          <h3>Interactive Flight Dispatch Risk Simulator</h3>
+        </div>
+        <button class="modal-close-btn" id="closeSimulatorBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">
+          Test live delay risk predictions using the trained gradient boosting model on real BTS flight operational parameters:
+        </p>
+
+        <div class="sim-controls-grid">
+          <div class="sim-control-item">
+            <label>Origin Hub</label>
+            <select id="simOrigin" class="sim-select">
+              <option value="ATL" selected>Atlanta (ATL)</option>
+              <option value="ORD">Chicago O'Hare (ORD)</option>
+              <option value="JFK">New York (JFK)</option>
+              <option value="EWR">Newark (EWR)</option>
+              <option value="DFW">Dallas/Fort Worth (DFW)</option>
+              <option value="LAX">Los Angeles (LAX)</option>
+              <option value="SFO">San Francisco (SFO)</option>
+              <option value="DEN">Denver (DEN)</option>
+              <option value="SEA">Seattle (SEA)</option>
+              <option value="MIA">Miami (MIA)</option>
+            </select>
+          </div>
+
+          <div class="sim-control-item">
+            <label>Departure Hour (Wave)</label>
+            <select id="simHour" class="sim-select">
+              <option value="7">07:00 AM (Early Bank)</option>
+              <option value="10">10:00 AM (Morning Wave)</option>
+              <option value="14">02:00 PM (Afternoon Bank)</option>
+              <option value="17" selected>05:00 PM (Evening Peak)</option>
+              <option value="19">07:00 PM (Critical Rush)</option>
+              <option value="21">09:00 PM (Night Wave)</option>
+            </select>
+          </div>
+
+          <div class="sim-control-item">
+            <label>Day of Week</label>
+            <select id="simDay" class="sim-select">
+              <option value="1">Monday</option>
+              <option value="2">Tuesday</option>
+              <option value="3">Wednesday</option>
+              <option value="4">Thursday</option>
+              <option value="5" selected>Friday (High Traffic)</option>
+              <option value="6">Saturday</option>
+              <option value="7">Sunday</option>
+            </select>
+          </div>
+
+          <div class="sim-control-item">
+            <label>Departure Delay at Gate: <span id="simDepDelayLabel">25 min</span></label>
+            <input type="range" id="simDepDelay" min="0" max="180" step="5" value="25" class="sim-slider">
+          </div>
+
+          <div class="sim-control-item">
+            <label>Flight Distance: <span id="simDistLabel">850 miles</span></label>
+            <input type="range" id="simDistance" min="150" max="3000" step="50" value="850" class="sim-slider">
+          </div>
+        </div>
+
+        <div class="sim-result-card">
+          <div class="sim-result-prob">
+            <span class="res-num" id="simResProb">68%</span>
+            <span class="res-badge" id="simResBadge">High Risk</span>
+          </div>
+          <div class="sim-result-details">
+            <p id="simRecommendation"><strong>Operations Recommendation:</strong> Allocate active ramp hold buffer and notify destination baggage &amp; gate connection team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Bar -->
+  <div id="toastNotification" class="toast-notification"></div>
+
+  <!-- Main Analytics Engine -->
+  <script src="app.js"></script>
+</body>
+</html>

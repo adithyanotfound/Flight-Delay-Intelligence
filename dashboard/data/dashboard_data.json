@@ -1,0 +1,5245 @@
+{
+  "metadata": {
+    "title": "Flight Delay Intelligence",
+    "subtitle": "Operational Performance & Delay Drivers",
+    "tagline": "Turning flight data into smoother journeys",
+    "source": "Bureau of Transportation Statistics (BTS)",
+    "period": "Jan 2023 - Dec 2023",
+    "benchmark_flights": 5842367
+  },
+  "kpi": {
+    "on_time_arrival_pct": 78.4,
+    "on_time_delta_pp": "+2.1 pp",
+    "avg_arrival_delay_min": 42.7,
+    "avg_arrival_delta_min": "-12.3 min",
+    "avg_departure_delay_min": 37.1,
+    "avg_departure_delta_min": "-10.5 min",
+    "cancellation_rate_pct": 1.6,
+    "cancellation_delta_pp": "-0.4 pp",
+    "total_flights": 5842367,
+    "total_flights_delta_pct": "+3.2%",
+    "sample_analyzed_flights": 2301112
+  },
+  "delay_drivers": [
+    {
+      "category": "Air Carrier",
+      "subtitle": "(e.g. maintenance, crew)",
+      "percentage": 32.4,
+      "color": "#0B3C6D"
+    },
+    {
+      "category": "Late Aircraft",
+      "subtitle": "(cascading delays)",
+      "percentage": 28.1,
+      "color": "#1D63A3"
+    },
+    {
+      "category": "NAS",
+      "subtitle": "(air traffic control, congestion)",
+      "percentage": 20.3,
+      "color": "#4A90E2"
+    },
+    {
+      "category": "Weather",
+      "subtitle": "",
+      "percentage": 14.6,
+      "color": "#7BB4EC"
+    },
+    {
+      "category": "Security",
+      "subtitle": "",
+      "percentage": 2.1,
+      "color": "#BCE0FD"
+    },
+    {
+      "category": "Other",
+      "subtitle": "",
+      "percentage": 2.5,
+      "color": "#CBD5E1"
+    }
+  ],
+  "monthly_trend": [
+    {
+      "month": "Jan",
+      "on_time_pct": 76.0,
+      "avg_arr_delay": 48.0
+    },
+    {
+      "month": "Feb",
+      "on_time_pct": 77.0,
+      "avg_arr_delay": 46.0
+    },
+    {
+      "month": "Mar",
+      "on_time_pct": 78.0,
+      "avg_arr_delay": 42.0
+    },
+    {
+      "month": "Apr",
+      "on_time_pct": 80.0,
+      "avg_arr_delay": 38.0
+    },
+    {
+      "month": "May",
+      "on_time_pct": 82.0,
+      "avg_arr_delay": 36.0
+    },
+    {
+      "month": "Jun",
+      "on_time_pct": 81.0,
+      "avg_arr_delay": 34.0
+    },
+    {
+      "month": "Jul",
+      "on_time_pct": 79.0,
+      "avg_arr_delay": 40.0
+    },
+    {
+      "month": "Aug",
+      "on_time_pct": 76.0,
+      "avg_arr_delay": 46.0
+    },
+    {
+      "month": "Sep",
+      "on_time_pct": 74.0,
+      "avg_arr_delay": 52.0
+    },
+    {
+      "month": "Oct",
+      "on_time_pct": 77.0,
+      "avg_arr_delay": 49.0
+    },
+    {
+      "month": "Nov",
+      "on_time_pct": 78.0,
+      "avg_arr_delay": 45.0
+    },
+    {
+      "month": "Dec",
+      "on_time_pct": 80.0,
+      "avg_arr_delay": 41.0
+    }
+  ],
+  "airports": [
+    {
+      "code": "SEA",
+      "name": "Seattle-Tacoma International",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.4502,
+      "lon": -122.3088,
+      "tier": "< 15",
+      "color": "#7BB4EC",
+      "avg_delay": 14.2,
+      "flights_share": 4.2
+    },
+    {
+      "code": "SFO",
+      "name": "San Francisco International",
+      "city": "San Francisco",
+      "state": "CA",
+      "lat": 37.6213,
+      "lon": -122.379,
+      "tier": "30 - 60",
+      "color": "#F97316",
+      "avg_delay": 38.5,
+      "flights_share": 4.2
+    },
+    {
+      "code": "LAX",
+      "name": "Los Angeles International",
+      "city": "Los Angeles",
+      "state": "CA",
+      "lat": 33.9416,
+      "lon": -118.4085,
+      "tier": "30 - 60",
+      "color": "#F97316",
+      "avg_delay": 35.8,
+      "flights_share": 4.2
+    },
+    {
+      "code": "DEN",
+      "name": "Denver International",
+      "city": "Denver",
+      "state": "CO",
+      "lat": 39.8561,
+      "lon": -104.6737,
+      "tier": "15 - 30",
+      "color": "#FDBA74",
+      "avg_delay": 24.6,
+      "flights_share": 4.2
+    },
+    {
+      "code": "DFW",
+      "name": "Dallas/Fort Worth International",
+      "city": "Dallas",
+      "state": "TX",
+      "lat": 32.8998,
+      "lon": -97.0403,
+      "tier": "30 - 60",
+      "color": "#F97316",
+      "avg_delay": 44.2,
+      "flights_share": 6.8
+    },
+    {
+      "code": "ORD",
+      "name": "Chicago O'Hare International",
+      "city": "Chicago",
+      "state": "IL",
+      "lat": 41.9742,
+      "lon": -87.9073,
+      "tier": "> 60",
+      "color": "#DC2626",
+      "avg_delay": 66.4,
+      "flights_share": 6.8
+    },
+    {
+      "code": "ATL",
+      "name": "Hartsfield-Jackson Atlanta International",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": 33.6407,
+      "lon": -84.4277,
+      "tier": "> 60",
+      "color": "#DC2626",
+      "avg_delay": 63.8,
+      "flights_share": 6.8
+    },
+    {
+      "code": "MIA",
+      "name": "Miami International",
+      "city": "Miami",
+      "state": "FL",
+      "lat": 25.7959,
+      "lon": -80.287,
+      "tier": "30 - 60",
+      "color": "#F97316",
+      "avg_delay": 41.7,
+      "flights_share": 4.2
+    },
+    {
+      "code": "JFK",
+      "name": "John F. Kennedy International",
+      "city": "New York",
+      "state": "NY",
+      "lat": 40.6413,
+      "lon": -73.7781,
+      "tier": "> 60",
+      "color": "#DC2626",
+      "avg_delay": 68.1,
+      "flights_share": 4.2
+    },
+    {
+      "code": "EWR",
+      "name": "Newark Liberty International",
+      "city": "Newark",
+      "state": "NJ",
+      "lat": 40.6895,
+      "lon": -74.1745,
+      "tier": "> 60",
+      "color": "#DC2626",
+      "avg_delay": 71.5,
+      "flights_share": 4.2
+    }
+  ],
+  "heatmap": {
+    "days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
+    "hours": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "matrix": [
+      {
+        "day": "Mon",
+        "values": [
+          4,
+          4,
+          4,
+          4,
+          12.0,
+          22,
+          36.0,
+          48,
+          65,
+          82,
+          74,
+          54
+        ]
+      },
+      {
+        "day": "Tue",
+        "values": [
+          6,
+          6,
+          6,
+          6,
+          13.5,
+          24,
+          38.5,
+          51,
+          65,
+          82,
+          74,
+          56
+        ]
+      },
+      {
+        "day": "Wed",
+        "values": [
+          4,
+          4,
+          4,
+          4,
+          15.0,
+          26,
+          41.0,
+          54,
+          65,
+          82,
+          74,
+          58
+        ]
+      },
+      {
+        "day": "Thu",
+        "values": [
+          6,
+          6,
+          6,
+          6,
+          16.5,
+          28,
+          43.5,
+          57,
+          70,
+          90,
+          82,
+          60
+        ]
+      },
+      {
+        "day": "Fri",
+        "values": [
+          4,
+          4,
+          4,
+          4,
+          18.0,
+          30,
+          46.0,
+          60,
+          70,
+          90,
+          82,
+          62
+        ]
+      },
+      {
+        "day": "Sat",
+        "values": [
+          6,
+          6,
+          6,
+          6,
+          19.5,
+          32,
+          48.5,
+          63,
+          65,
+          82,
+          74,
+          64
+        ]
+      },
+      {
+        "day": "Sun",
+        "values": [
+          4,
+          4,
+          4,
+          4,
+          21.0,
+          34,
+          51.0,
+          66,
+          70,
+          90,
+          74,
+          66
+        ]
+      }
+    ]
+  },
+  "scatter_regression": {
+    "r2": 0.72,
+    "slope": 0.94,
+    "intercept": 2.1,
+    "equation": "ArrDelay = 0.94 * DepDelay + 2.1",
+    "points": [
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 108.0,
+        "arr_delay": 94.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 167.0,
+        "arr_delay": 176.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 34.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 103.0,
+        "arr_delay": 89.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 52.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 188.0,
+        "arr_delay": 181.0
+      },
+      {
+        "dep_delay": 34.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 27.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 35.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 27.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 49.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 37.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 82.0,
+        "arr_delay": 70.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 61.0,
+        "arr_delay": 43.0
+      },
+      {
+        "dep_delay": 74.0,
+        "arr_delay": 67.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 50.0,
+        "arr_delay": 46.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 244.0,
+        "arr_delay": 222.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 74.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 214.0,
+        "arr_delay": 198.0
+      },
+      {
+        "dep_delay": 49.0,
+        "arr_delay": 39.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 45.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 35.0,
+        "arr_delay": 47.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 42.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 48.0,
+        "arr_delay": 31.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 270.0,
+        "arr_delay": 246.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 78.0,
+        "arr_delay": 59.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 20.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 32.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 36.0
+      },
+      {
+        "dep_delay": 150.0,
+        "arr_delay": 153.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 74.0,
+        "arr_delay": 65.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 65.0
+      },
+      {
+        "dep_delay": 27.0,
+        "arr_delay": 49.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 35.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 58.0,
+        "arr_delay": 52.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 164.0,
+        "arr_delay": 147.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 43.0
+      },
+      {
+        "dep_delay": 32.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 219.0,
+        "arr_delay": 215.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 50.0,
+        "arr_delay": 38.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 192.0,
+        "arr_delay": 192.0
+      },
+      {
+        "dep_delay": 27.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 37.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 27.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 201.0,
+        "arr_delay": 204.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 92.0,
+        "arr_delay": 90.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 57.0,
+        "arr_delay": 96.0
+      },
+      {
+        "dep_delay": 57.0,
+        "arr_delay": 48.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 40.0,
+        "arr_delay": 63.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 27.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 75.0,
+        "arr_delay": 80.0
+      },
+      {
+        "dep_delay": 170.0,
+        "arr_delay": 138.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 82.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 103.0,
+        "arr_delay": 100.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 137.0,
+        "arr_delay": 154.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 35.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 49.0
+      },
+      {
+        "dep_delay": 69.0,
+        "arr_delay": 56.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 76.0,
+        "arr_delay": 82.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 42.0
+      },
+      {
+        "dep_delay": 45.0,
+        "arr_delay": 39.0
+      },
+      {
+        "dep_delay": 71.0,
+        "arr_delay": 70.0
+      },
+      {
+        "dep_delay": 42.0,
+        "arr_delay": 38.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 71.0,
+        "arr_delay": 93.0
+      },
+      {
+        "dep_delay": 42.0,
+        "arr_delay": 52.0
+      },
+      {
+        "dep_delay": 68.0,
+        "arr_delay": 73.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 75.0,
+        "arr_delay": 53.0
+      },
+      {
+        "dep_delay": 76.0,
+        "arr_delay": 83.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 110.0,
+        "arr_delay": 94.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 51.0,
+        "arr_delay": 58.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 36.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 158.0,
+        "arr_delay": 151.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 112.0,
+        "arr_delay": 105.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 29.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 77.0,
+        "arr_delay": 65.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 132.0,
+        "arr_delay": 141.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 36.0,
+        "arr_delay": 35.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 124.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 65.0,
+        "arr_delay": 63.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 48.0,
+        "arr_delay": 34.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 118.0,
+        "arr_delay": 162.0
+      },
+      {
+        "dep_delay": 40.0,
+        "arr_delay": 27.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 48.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 88.0,
+        "arr_delay": 74.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 120.0,
+        "arr_delay": 128.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 37.0,
+        "arr_delay": 41.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 37.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 36.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 27.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 215.0,
+        "arr_delay": 206.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 244.0,
+        "arr_delay": 234.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 87.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 86.0,
+        "arr_delay": 79.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 80.0,
+        "arr_delay": 95.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 38.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 160.0,
+        "arr_delay": 148.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 108.0,
+        "arr_delay": 103.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 29.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 32.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 118.0,
+        "arr_delay": 106.0
+      },
+      {
+        "dep_delay": 102.0,
+        "arr_delay": 97.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 30.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 29.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 42.0,
+        "arr_delay": 27.0
+      },
+      {
+        "dep_delay": 41.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 78.0,
+        "arr_delay": 76.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 86.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 36.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 43.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 89.0,
+        "arr_delay": 75.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 50.0,
+        "arr_delay": 69.0
+      },
+      {
+        "dep_delay": 148.0,
+        "arr_delay": 132.0
+      },
+      {
+        "dep_delay": 63.0,
+        "arr_delay": 76.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 40.0,
+        "arr_delay": 87.0
+      },
+      {
+        "dep_delay": 128.0,
+        "arr_delay": 114.0
+      },
+      {
+        "dep_delay": 74.0,
+        "arr_delay": 99.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 36.0,
+        "arr_delay": 29.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 32.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 184.0,
+        "arr_delay": 159.0
+      },
+      {
+        "dep_delay": 91.0,
+        "arr_delay": 140.0
+      },
+      {
+        "dep_delay": 37.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 97.0,
+        "arr_delay": 103.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 27.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 34.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 122.0,
+        "arr_delay": 128.0
+      },
+      {
+        "dep_delay": 77.0,
+        "arr_delay": 76.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 38.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 63.0,
+        "arr_delay": 57.0
+      },
+      {
+        "dep_delay": 302.0,
+        "arr_delay": 295.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 125.0,
+        "arr_delay": 123.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 32.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 77.0,
+        "arr_delay": 64.0
+      },
+      {
+        "dep_delay": 36.0,
+        "arr_delay": 39.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 31.0
+      },
+      {
+        "dep_delay": 34.0,
+        "arr_delay": 41.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 37.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 86.0,
+        "arr_delay": 82.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 111.0,
+        "arr_delay": 73.0
+      },
+      {
+        "dep_delay": 42.0,
+        "arr_delay": 27.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 54.0,
+        "arr_delay": 55.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 70.0,
+        "arr_delay": 62.0
+      },
+      {
+        "dep_delay": 45.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 87.0,
+        "arr_delay": 130.0
+      },
+      {
+        "dep_delay": 89.0,
+        "arr_delay": 108.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 145.0,
+        "arr_delay": 137.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 141.0,
+        "arr_delay": 121.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 161.0,
+        "arr_delay": 172.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 82.0,
+        "arr_delay": 73.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 99.0,
+        "arr_delay": 102.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 66.0,
+        "arr_delay": 65.0
+      },
+      {
+        "dep_delay": 98.0,
+        "arr_delay": 88.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 28.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 60.0,
+        "arr_delay": 44.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 139.0,
+        "arr_delay": 138.0
+      },
+      {
+        "dep_delay": 82.0,
+        "arr_delay": 82.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 28.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 80.0,
+        "arr_delay": 103.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 31.0
+      },
+      {
+        "dep_delay": 34.0,
+        "arr_delay": 28.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 42.0,
+        "arr_delay": 44.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 218.0,
+        "arr_delay": 233.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 35.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 79.0,
+        "arr_delay": 62.0
+      },
+      {
+        "dep_delay": 45.0,
+        "arr_delay": 32.0
+      },
+      {
+        "dep_delay": 36.0,
+        "arr_delay": 31.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 95.0,
+        "arr_delay": 87.0
+      },
+      {
+        "dep_delay": 219.0,
+        "arr_delay": 203.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 138.0,
+        "arr_delay": 153.0
+      },
+      {
+        "dep_delay": 118.0,
+        "arr_delay": 105.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 55.0,
+        "arr_delay": 48.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 138.0,
+        "arr_delay": 146.0
+      },
+      {
+        "dep_delay": 32.0,
+        "arr_delay": 60.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 81.0,
+        "arr_delay": 71.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 36.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 208.0,
+        "arr_delay": 189.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 29.0
+      },
+      {
+        "dep_delay": 85.0,
+        "arr_delay": 64.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 37.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 47.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 120.0,
+        "arr_delay": 110.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 40.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 69.0
+      },
+      {
+        "dep_delay": 48.0,
+        "arr_delay": 43.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 72.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 20.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 54.0,
+        "arr_delay": 44.0
+      },
+      {
+        "dep_delay": 103.0,
+        "arr_delay": 86.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 45.0,
+        "arr_delay": 31.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 122.0,
+        "arr_delay": 111.0
+      },
+      {
+        "dep_delay": 49.0,
+        "arr_delay": 56.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 62.0,
+        "arr_delay": 71.0
+      },
+      {
+        "dep_delay": 86.0,
+        "arr_delay": 70.0
+      },
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 38.0
+      },
+      {
+        "dep_delay": 127.0,
+        "arr_delay": 115.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 34.0
+      },
+      {
+        "dep_delay": 54.0,
+        "arr_delay": 48.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 144.0,
+        "arr_delay": 163.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 47.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 143.0,
+        "arr_delay": 119.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 29.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 29.0
+      },
+      {
+        "dep_delay": 41.0,
+        "arr_delay": 43.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 54.0,
+        "arr_delay": 73.0
+      },
+      {
+        "dep_delay": 59.0,
+        "arr_delay": 41.0
+      },
+      {
+        "dep_delay": 122.0,
+        "arr_delay": 110.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 148.0,
+        "arr_delay": 167.0
+      },
+      {
+        "dep_delay": 29.0,
+        "arr_delay": 31.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 52.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 105.0,
+        "arr_delay": 102.0
+      },
+      {
+        "dep_delay": 99.0,
+        "arr_delay": 80.0
+      },
+      {
+        "dep_delay": 228.0,
+        "arr_delay": 219.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 68.0,
+        "arr_delay": 83.0
+      },
+      {
+        "dep_delay": 56.0,
+        "arr_delay": 45.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 31.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 53.0,
+        "arr_delay": 47.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 72.0,
+        "arr_delay": 65.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 32.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 62.0,
+        "arr_delay": 29.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 32.0
+      },
+      {
+        "dep_delay": 77.0,
+        "arr_delay": 141.0
+      },
+      {
+        "dep_delay": 105.0,
+        "arr_delay": 110.0
+      },
+      {
+        "dep_delay": 100.0,
+        "arr_delay": 102.0
+      },
+      {
+        "dep_delay": 181.0,
+        "arr_delay": 166.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 48.0,
+        "arr_delay": 52.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 28.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 55.0
+      },
+      {
+        "dep_delay": 30.0,
+        "arr_delay": 27.0
+      },
+      {
+        "dep_delay": 34.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 50.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 214.0,
+        "arr_delay": 241.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 38.0,
+        "arr_delay": 34.0
+      },
+      {
+        "dep_delay": 73.0,
+        "arr_delay": 73.0
+      },
+      {
+        "dep_delay": 76.0,
+        "arr_delay": 60.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 79.0,
+        "arr_delay": 72.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 145.0,
+        "arr_delay": 142.0
+      },
+      {
+        "dep_delay": 55.0,
+        "arr_delay": 48.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 72.0,
+        "arr_delay": 76.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 104.0,
+        "arr_delay": 106.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 107.0,
+        "arr_delay": 103.0
+      },
+      {
+        "dep_delay": 40.0,
+        "arr_delay": 28.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 97.0,
+        "arr_delay": 84.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 50.0,
+        "arr_delay": 56.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 38.0,
+        "arr_delay": 38.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 64.0,
+        "arr_delay": 49.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 31.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 30.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 20.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 82.0,
+        "arr_delay": 63.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 32.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 41.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 38.0,
+        "arr_delay": 66.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 27.0,
+        "arr_delay": 28.0
+      },
+      {
+        "dep_delay": 133.0,
+        "arr_delay": 143.0
+      },
+      {
+        "dep_delay": 62.0,
+        "arr_delay": 51.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 54.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 72.0,
+        "arr_delay": 63.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 157.0,
+        "arr_delay": 135.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 85.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 75.0,
+        "arr_delay": 77.0
+      },
+      {
+        "dep_delay": 73.0,
+        "arr_delay": 92.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 93.0,
+        "arr_delay": 124.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 52.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 48.0,
+        "arr_delay": 34.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 41.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 30.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 122.0,
+        "arr_delay": 119.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 193.0,
+        "arr_delay": 191.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 68.0,
+        "arr_delay": 46.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 20.0
+      },
+      {
+        "dep_delay": 61.0,
+        "arr_delay": 56.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 29.0
+      },
+      {
+        "dep_delay": 56.0,
+        "arr_delay": 49.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 37.0,
+        "arr_delay": 102.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 214.0,
+        "arr_delay": 209.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 41.0,
+        "arr_delay": 35.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 96.0,
+        "arr_delay": 75.0
+      },
+      {
+        "dep_delay": 298.0,
+        "arr_delay": 289.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 88.0,
+        "arr_delay": 81.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 34.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 63.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 69.0,
+        "arr_delay": 73.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 115.0,
+        "arr_delay": 92.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 125.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 28.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 247.0,
+        "arr_delay": 251.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 18.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 69.0
+      },
+      {
+        "dep_delay": 35.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 55.0,
+        "arr_delay": 54.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 52.0,
+        "arr_delay": 79.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 30.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 50.0,
+        "arr_delay": 49.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 42.0
+      },
+      {
+        "dep_delay": 52.0,
+        "arr_delay": 91.0
+      },
+      {
+        "dep_delay": 67.0,
+        "arr_delay": 50.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 176.0,
+        "arr_delay": 188.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 76.0,
+        "arr_delay": 56.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 65.0,
+        "arr_delay": 68.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 62.0,
+        "arr_delay": 101.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 47.0
+      },
+      {
+        "dep_delay": 27.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 99.0,
+        "arr_delay": 111.0
+      },
+      {
+        "dep_delay": 41.0,
+        "arr_delay": 29.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 46.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 79.0,
+        "arr_delay": 73.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 40.0,
+        "arr_delay": 41.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 62.0,
+        "arr_delay": 38.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 98.0,
+        "arr_delay": 93.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 27.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 41.0,
+        "arr_delay": 46.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 32.0,
+        "arr_delay": 65.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 39.0
+      },
+      {
+        "dep_delay": 214.0,
+        "arr_delay": 218.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 87.0,
+        "arr_delay": 95.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 41.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 28.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 20.0
+      },
+      {
+        "dep_delay": 202.0,
+        "arr_delay": 188.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 140.0,
+        "arr_delay": 118.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 55.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 79.0,
+        "arr_delay": 83.0
+      },
+      {
+        "dep_delay": 40.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 67.0,
+        "arr_delay": 56.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 35.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 52.0,
+        "arr_delay": 75.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 129.0,
+        "arr_delay": 127.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 53.0,
+        "arr_delay": 66.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 39.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 66.0,
+        "arr_delay": 57.0
+      },
+      {
+        "dep_delay": 103.0,
+        "arr_delay": 114.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 20.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 34.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 54.0
+      },
+      {
+        "dep_delay": 35.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 42.0
+      },
+      {
+        "dep_delay": 244.0,
+        "arr_delay": 244.0
+      },
+      {
+        "dep_delay": 70.0,
+        "arr_delay": 61.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 93.0,
+        "arr_delay": 76.0
+      },
+      {
+        "dep_delay": 146.0,
+        "arr_delay": 131.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 208.0,
+        "arr_delay": 191.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 159.0,
+        "arr_delay": 155.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 47.0,
+        "arr_delay": 57.0
+      },
+      {
+        "dep_delay": 64.0,
+        "arr_delay": 90.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 87.0,
+        "arr_delay": 84.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 38.0,
+        "arr_delay": 41.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 105.0,
+        "arr_delay": 102.0
+      },
+      {
+        "dep_delay": 164.0,
+        "arr_delay": 143.0
+      },
+      {
+        "dep_delay": 82.0,
+        "arr_delay": 69.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 78.0,
+        "arr_delay": 56.0
+      },
+      {
+        "dep_delay": 46.0,
+        "arr_delay": 29.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 37.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 159.0,
+        "arr_delay": 147.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 99.0,
+        "arr_delay": 90.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 37.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 49.0,
+        "arr_delay": 50.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 123.0,
+        "arr_delay": 111.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 55.0,
+        "arr_delay": 78.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 51.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 48.0,
+        "arr_delay": 47.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 52.0,
+        "arr_delay": 58.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 123.0,
+        "arr_delay": 120.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 20.0
+      },
+      {
+        "dep_delay": 171.0,
+        "arr_delay": 162.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 36.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 104.0,
+        "arr_delay": 104.0
+      },
+      {
+        "dep_delay": 30.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 63.0,
+        "arr_delay": 42.0
+      },
+      {
+        "dep_delay": 60.0,
+        "arr_delay": 58.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 61.0,
+        "arr_delay": 57.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 42.0,
+        "arr_delay": 58.0
+      },
+      {
+        "dep_delay": 26.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 61.0,
+        "arr_delay": 48.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 32.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 42.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 72.0,
+        "arr_delay": 81.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 39.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 35.0,
+        "arr_delay": 29.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 70.0,
+        "arr_delay": 66.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 116.0,
+        "arr_delay": 171.0
+      },
+      {
+        "dep_delay": 48.0,
+        "arr_delay": 55.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 122.0,
+        "arr_delay": 92.0
+      },
+      {
+        "dep_delay": 38.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 117.0,
+        "arr_delay": 115.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 33.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 25.0,
+        "arr_delay": 37.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 30.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 46.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 48.0
+      },
+      {
+        "dep_delay": 252.0,
+        "arr_delay": 245.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 37.0
+      },
+      {
+        "dep_delay": 113.0,
+        "arr_delay": 96.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 36.0,
+        "arr_delay": 43.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 193.0,
+        "arr_delay": 178.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 86.0,
+        "arr_delay": 102.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 21.0
+      },
+      {
+        "dep_delay": 89.0,
+        "arr_delay": 87.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 64.0,
+        "arr_delay": 45.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 192.0,
+        "arr_delay": 177.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 35.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 58.0,
+        "arr_delay": 39.0
+      },
+      {
+        "dep_delay": 15.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 52.0,
+        "arr_delay": 32.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 82.0,
+        "arr_delay": 66.0
+      },
+      {
+        "dep_delay": 88.0,
+        "arr_delay": 46.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 16.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 67.0
+      },
+      {
+        "dep_delay": 70.0,
+        "arr_delay": 68.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 31.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 43.0,
+        "arr_delay": 64.0
+      },
+      {
+        "dep_delay": 93.0,
+        "arr_delay": 159.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 212.0,
+        "arr_delay": 248.0
+      },
+      {
+        "dep_delay": 63.0,
+        "arr_delay": 57.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 25.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 41.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 74.0,
+        "arr_delay": 65.0
+      },
+      {
+        "dep_delay": 36.0,
+        "arr_delay": 42.0
+      },
+      {
+        "dep_delay": 36.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 76.0,
+        "arr_delay": 48.0
+      },
+      {
+        "dep_delay": 39.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 72.0,
+        "arr_delay": 34.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 88.0,
+        "arr_delay": 84.0
+      },
+      {
+        "dep_delay": 112.0,
+        "arr_delay": 175.0
+      },
+      {
+        "dep_delay": 85.0,
+        "arr_delay": 62.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 19.0
+      },
+      {
+        "dep_delay": 46.0,
+        "arr_delay": 52.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 66.0,
+        "arr_delay": 58.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 56.0,
+        "arr_delay": 47.0
+      },
+      {
+        "dep_delay": 68.0,
+        "arr_delay": 66.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 87.0,
+        "arr_delay": 86.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 34.0,
+        "arr_delay": 56.0
+      },
+      {
+        "dep_delay": 20.0,
+        "arr_delay": 4.0
+      },
+      {
+        "dep_delay": 14.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 29.0,
+        "arr_delay": 14.0
+      },
+      {
+        "dep_delay": 65.0,
+        "arr_delay": 64.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 54.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 107.0,
+        "arr_delay": 99.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 112.0,
+        "arr_delay": 103.0
+      },
+      {
+        "dep_delay": 51.0,
+        "arr_delay": 44.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 15.0
+      },
+      {
+        "dep_delay": 140.0,
+        "arr_delay": 130.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 10.0
+      },
+      {
+        "dep_delay": 56.0,
+        "arr_delay": 77.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": -4.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 11.0
+      },
+      {
+        "dep_delay": 21.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": 36.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": 0.0
+      },
+      {
+        "dep_delay": 126.0,
+        "arr_delay": 123.0
+      },
+      {
+        "dep_delay": 120.0,
+        "arr_delay": 99.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 26.0
+      },
+      {
+        "dep_delay": 33.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 19.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 31.0,
+        "arr_delay": 50.0
+      },
+      {
+        "dep_delay": 7.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 72.0,
+        "arr_delay": 90.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 13.0
+      },
+      {
+        "dep_delay": 110.0,
+        "arr_delay": 105.0
+      },
+      {
+        "dep_delay": 50.0,
+        "arr_delay": 37.0
+      },
+      {
+        "dep_delay": 63.0,
+        "arr_delay": 61.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 6.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 35.0,
+        "arr_delay": 27.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 132.0,
+        "arr_delay": 139.0
+      },
+      {
+        "dep_delay": 77.0,
+        "arr_delay": 51.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -3.0
+      },
+      {
+        "dep_delay": 44.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 67.0,
+        "arr_delay": 61.0
+      },
+      {
+        "dep_delay": 12.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 69.0,
+        "arr_delay": 46.0
+      },
+      {
+        "dep_delay": 42.0,
+        "arr_delay": 54.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 52.0,
+        "arr_delay": 53.0
+      },
+      {
+        "dep_delay": 36.0,
+        "arr_delay": 42.0
+      },
+      {
+        "dep_delay": 52.0,
+        "arr_delay": 67.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 30.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 40.0
+      },
+      {
+        "dep_delay": 28.0,
+        "arr_delay": 24.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": -8.0
+      },
+      {
+        "dep_delay": 189.0,
+        "arr_delay": 192.0
+      },
+      {
+        "dep_delay": 41.0,
+        "arr_delay": 52.0
+      },
+      {
+        "dep_delay": 16.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 119.0,
+        "arr_delay": 99.0
+      },
+      {
+        "dep_delay": 8.0,
+        "arr_delay": 38.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -2.0
+      },
+      {
+        "dep_delay": 88.0,
+        "arr_delay": 80.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 8.0
+      },
+      {
+        "dep_delay": 11.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 5.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -9.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 149.0,
+        "arr_delay": 144.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -6.0
+      },
+      {
+        "dep_delay": 17.0,
+        "arr_delay": 17.0
+      },
+      {
+        "dep_delay": 22.0,
+        "arr_delay": 22.0
+      },
+      {
+        "dep_delay": 61.0,
+        "arr_delay": 82.0
+      },
+      {
+        "dep_delay": 144.0,
+        "arr_delay": 131.0
+      },
+      {
+        "dep_delay": 207.0,
+        "arr_delay": 211.0
+      },
+      {
+        "dep_delay": 10.0,
+        "arr_delay": -7.0
+      },
+      {
+        "dep_delay": 5.0,
+        "arr_delay": -5.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 1.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 20.0
+      },
+      {
+        "dep_delay": 23.0,
+        "arr_delay": 12.0
+      },
+      {
+        "dep_delay": 79.0,
+        "arr_delay": 79.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": -10.0
+      },
+      {
+        "dep_delay": 13.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 184.0,
+        "arr_delay": 171.0
+      },
+      {
+        "dep_delay": 9.0,
+        "arr_delay": 9.0
+      },
+      {
+        "dep_delay": 1.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 0.0,
+        "arr_delay": 28.0
+      },
+      {
+        "dep_delay": 6.0,
+        "arr_delay": 7.0
+      },
+      {
+        "dep_delay": 34.0,
+        "arr_delay": 23.0
+      },
+      {
+        "dep_delay": 69.0,
+        "arr_delay": 72.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": -1.0
+      },
+      {
+        "dep_delay": 24.0,
+        "arr_delay": 2.0
+      },
+      {
+        "dep_delay": 4.0,
+        "arr_delay": 3.0
+      },
+      {
+        "dep_delay": 119.0,
+        "arr_delay": 129.0
+      },
+      {
+        "dep_delay": 2.0,
+        "arr_delay": 18.0
+      },
+      {
+        "dep_delay": 3.0,
+        "arr_delay": -1.0
+      }
+    ]
+  },
+  "model": {
+    "predicted_probability": 68,
+    "risk_tier": "High Risk",
+    "feature_importance": [
+      {
+        "feature": "Departure Delay",
+        "importance": 0.34
+      },
+      {
+        "feature": "Origin Airport",
+        "importance": 0.18
+      },
+      {
+        "feature": "Departure Hour",
+        "importance": 0.16
+      },
+      {
+        "feature": "Day of Week",
+        "importance": 0.12
+      },
+      {
+        "feature": "Distance",
+        "importance": 0.1
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "id": 1,
+      "title": "Protect high-risk departure windows",
+      "icon": "clock",
+      "description": "Increase staffing and monitoring during 4 PM - 8 PM when delays peak."
+    },
+    {
+      "id": 2,
+      "title": "Target hub bottlenecks",
+      "icon": "pin",
+      "description": "Focus on operational improvements at high-delay airports (e.g. ATL, ORD, LAX) through better resource planning."
+    },
+    {
+      "id": 3,
+      "title": "Increase turnaround buffer",
+      "icon": "gear",
+      "description": "Add buffer time for aircraft and crews on routes with high late-aircraft propagation to reduce cascading delays."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "FlightDelayIntelligenceTheme",
+  "dataColors": [
+    "#0B3C6D",
+    "#1D63A3",
+    "#4A90E2",
+    "#7BB4EC",
+    "#BCE0FD",
+    "#CBD5E1",
+    "#F97316",
+    "#DC2626",
+    "#10B981"
+  ],
+  "background": "#F8FAFC",
+  "foreground": "#0F172A",
+  "tableAccent": "#0B3C6D",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontColor": { "solid": { "color": "#0F172A" } },
+            "fontSize": 12,
+            "fontFamily": "Segoe UI, Inter, sans-serif"
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#FFFFFF" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#E2E8F0" } },
+            "radius": 8
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#000000" } },
+            "transparency": 95,
+            "position": "Outer",
+            "preset": "BottomRight"
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "fontSize": 24,
+            "fontFamily": "Segoe UI Semibold, Inter",
+            "color": { "solid": { "color": "#0F172A" } }
+          }
+        ],
+        "categoryLabels": [
+          {
+            "fontSize": 10,
+            "color": { "solid": { "color": "#64748B" } }
+          }
+        ]
+      }
+    }
+  }
+}

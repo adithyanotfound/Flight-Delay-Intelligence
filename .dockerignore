@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+.git
+.gitignore
+.env
+python/.env
+data/openrouter_key.txt
+scratch/
+powerbi/
+ml/
+*.zip
+*.log
