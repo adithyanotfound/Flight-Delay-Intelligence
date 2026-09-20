@@ -53,6 +53,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     EWR: { x: 824, y: 198 }
   };
 
+  /**
+   * Toggle dashboard-wide skeleton loader states smoothly
+   */
+  function setDashboardLoading(isLoading) {
+    const cards = document.querySelectorAll('.kpi-card, .chart-card');
+    if (loadingBar) {
+      if (isLoading) loadingBar.classList.add('active');
+      else loadingBar.classList.remove('active');
+    }
+
+    cards.forEach(card => {
+      if (isLoading) card.classList.add('is-loading');
+      else card.classList.remove('is-loading');
+    });
+  }
+
+  // Activate skeleton loader immediately on load
+  setDashboardLoading(true);
+
   // Preload USA State Paths from MiraWision/usa-map-react
   await loadUsaStatePaths();
   await initFilterOptions();
@@ -141,7 +160,7 @@ document.addEventListener('DOMContentLoaded', async () => {
    * Execute real-time query against /api/filter
    */
   async function triggerQuery() {
-    if (loadingBar) loadingBar.classList.add('active');
+    setDashboardLoading(true);
 
     const params = new URLSearchParams({
       start_date: dateStartEl.value || '2023-01-01',
@@ -161,9 +180,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (err) {
       console.error('Failed to query /api/filter:', err);
     } finally {
-      if (loadingBar) loadingBar.classList.remove('active');
+      setDashboardLoading(false);
     }
   }
+
 
   /**
    * Render all dashboard components
@@ -746,6 +766,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     };
 
+    const recCard = document.getElementById('aiRecsCard');
+    if (recCard) recCard.classList.add('is-loading');
+
     try {
       const resp = await fetch('/api/recommendations', {
         method: 'POST',
@@ -768,8 +791,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (dot) dot.className = 'ai-status-dot';
       renderDefaultRecommendations();
       if (interactive) showToast(`Notice: ${err.message}`, 'error', 4000);
+    } finally {
+      if (recCard) recCard.classList.remove('is-loading');
     }
   }
+
 
   /**
    * Smart fallback recommendations

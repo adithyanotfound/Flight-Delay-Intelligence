@@ -267,7 +267,7 @@
         <section class="kpi-row" id="kpiRow">
           
           <!-- Card 1: On-Time Arrival % -->
-          <div class="kpi-card" id="cardOtp">
+          <div class="kpi-card is-loading" id="cardOtp">
             <div class="kpi-header">
               <div class="kpi-icon-wrap icon-plane">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -286,7 +286,7 @@
           </div>
 
           <!-- Card 2: Avg. Arrival Delay -->
-          <div class="kpi-card" id="cardArrDelay">
+          <div class="kpi-card is-loading" id="cardArrDelay">
             <div class="kpi-header">
               <div class="kpi-icon-wrap icon-clock">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -306,7 +306,7 @@
           </div>
 
           <!-- Card 3: Avg. Departure Delay -->
-          <div class="kpi-card" id="cardDepDelay">
+          <div class="kpi-card is-loading" id="cardDepDelay">
             <div class="kpi-header">
               <div class="kpi-icon-wrap icon-clock">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -326,7 +326,7 @@
           </div>
 
           <!-- Card 4: Cancellation Rate -->
-          <div class="kpi-card" id="cardCancel">
+          <div class="kpi-card is-loading" id="cardCancel">
             <div class="kpi-header">
               <div class="kpi-icon-wrap icon-cancel">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -347,7 +347,7 @@
           </div>
 
           <!-- Card 5: Total Flights -->
-          <div class="kpi-card" id="cardTotalFlights">
+          <div class="kpi-card is-loading" id="cardTotalFlights">
             <div class="kpi-header">
               <div class="kpi-icon-wrap icon-bars">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -369,11 +369,29 @@
 
         </section>
 
+
         <!-- Row 2: Middle Charts (On-Time Performance Trend + Delay Drivers) -->
         <section class="charts-row-middle">
           
           <!-- Left Chart: On-Time Performance Trend (Dual-Axis Combo) -->
-          <div class="chart-card trend-card">
+          <div class="chart-card trend-card is-loading" id="trendChartCard">
+            <div class="card-skeleton-overlay">
+              <div class="skeleton-shimmer" style="width: 170px; height: 16px; margin-bottom: 16px;"></div>
+              <div class="skeleton-trend-chart">
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 65%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 82%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 74%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 58%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 86%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 76%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 62%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 84%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 72%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 64%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 79%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+                <div class="skeleton-bar-col"><div class="skeleton-bar skeleton-shimmer" style="height: 81%;"></div><div class="skeleton-bar-lbl skeleton-shimmer"></div></div>
+              </div>
+            </div>
             <div class="card-header-with-legend">
               <h2 class="card-title">On-Time Performance Trend</h2>
               <div class="chart-legend">
@@ -387,7 +405,19 @@
           </div>
 
           <!-- Right Chart: Delay Drivers (Clean, Scannable Root Cause Decomposition) -->
-          <div class="chart-card drivers-card">
+          <div class="chart-card drivers-card is-loading" id="driversCard">
+            <div class="card-skeleton-overlay">
+              <div class="skeleton-shimmer" style="width: 140px; height: 16px; margin-bottom: 12px;"></div>
+              <div class="skeleton-shimmer" style="width: 100%; height: 28px; border-radius: 999px; margin-bottom: 20px;"></div>
+              <div class="skeleton-drivers-list">
+                <div class="skeleton-driver-row"><div class="skeleton-driver-label skeleton-shimmer"></div><div class="skeleton-driver-track skeleton-shimmer"></div><div class="skeleton-driver-badge skeleton-shimmer"></div></div>
+                <div class="skeleton-driver-row"><div class="skeleton-driver-label skeleton-shimmer"></div><div class="skeleton-driver-track skeleton-shimmer"></div><div class="skeleton-driver-badge skeleton-shimmer"></div></div>
+                <div class="skeleton-driver-row"><div class="skeleton-driver-label skeleton-shimmer"></div><div class="skeleton-driver-track skeleton-shimmer"></div><div class="skeleton-driver-badge skeleton-shimmer"></div></div>
+                <div class="skeleton-driver-row"><div class="skeleton-driver-label skeleton-shimmer"></div><div class="skeleton-driver-track skeleton-shimmer"></div><div class="skeleton-driver-badge skeleton-shimmer"></div></div>
+                <div class="skeleton-driver-row"><div class="skeleton-driver-label skeleton-shimmer"></div><div class="skeleton-driver-track skeleton-shimmer"></div><div class="skeleton-driver-badge skeleton-shimmer"></div></div>
+                <div class="skeleton-driver-row"><div class="skeleton-driver-label skeleton-shimmer"></div><div class="skeleton-driver-track skeleton-shimmer"></div><div class="skeleton-driver-badge skeleton-shimmer"></div></div>
+              </div>
+            </div>
             <div class="card-header-with-legend">
               <h2 class="card-title">Delay Drivers</h2>
               <span class="drivers-total-badge" id="driversTotalMinutesBadge">Total: Calculating...</span>
@@ -421,13 +451,29 @@
             </div>
           </div>
 
+
         </section>
 
         <!-- Row 3: Lower-Middle Charts (Airport Map + Heatmap Matrix + Scatter Plot) -->
         <section class="charts-row-lower">
           
           <!-- Visual 1: Delay Concentration by Airport (US SVG Map) -->
-          <div class="chart-card map-card">
+          <div class="chart-card map-card is-loading" id="airportMapCard">
+            <div class="card-skeleton-overlay">
+              <div class="skeleton-shimmer" style="width: 190px; height: 16px; margin-bottom: 14px;"></div>
+              <div class="skeleton-map-wrap">
+                <div class="skeleton-map-shape skeleton-shimmer"></div>
+                <div class="skeleton-map-pin skeleton-shimmer" style="top: 25%; left: 15%;"></div>
+                <div class="skeleton-map-pin skeleton-shimmer" style="top: 45%; left: 12%;"></div>
+                <div class="skeleton-map-pin skeleton-shimmer" style="top: 55%; left: 16%;"></div>
+                <div class="skeleton-map-pin skeleton-shimmer" style="top: 42%; left: 35%;"></div>
+                <div class="skeleton-map-pin skeleton-shimmer" style="top: 65%; left: 48%;"></div>
+                <div class="skeleton-map-pin skeleton-shimmer" style="top: 35%; left: 62%;"></div>
+                <div class="skeleton-map-pin skeleton-shimmer" style="top: 60%; left: 72%;"></div>
+                <div class="skeleton-map-pin skeleton-shimmer" style="top: 35%; left: 85%;"></div>
+                <div class="skeleton-map-pin skeleton-shimmer" style="top: 80%; left: 80%;"></div>
+              </div>
+            </div>
             <h2 class="card-title">Delay Concentration by Airport</h2>
             <div class="us-map-wrapper">
               <svg id="usMapSvg" viewBox="0 0 960 600" class="us-map-canvas">
@@ -445,7 +491,16 @@
           </div>
 
           <!-- Visual 2: Delay by Day & Departure Hour (2D Heatmap Matrix) -->
-          <div class="chart-card heatmap-card">
+          <div class="chart-card heatmap-card is-loading" id="heatmapCard">
+            <div class="card-skeleton-overlay">
+              <div class="skeleton-shimmer" style="width: 190px; height: 16px; margin-bottom: 14px;"></div>
+              <div class="skeleton-heatmap-grid">
+                <div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div>
+                <div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div>
+                <div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div>
+                <div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div><div class="skeleton-heat-cell skeleton-shimmer"></div>
+              </div>
+            </div>
             <h2 class="card-title">Delay by Day &amp; Departure Hour</h2>
             <div class="heatmap-wrapper">
               <div class="heatmap-grid" id="heatmapGrid">
@@ -464,7 +519,15 @@
           </div>
 
           <!-- Visual 3: Departure Delay vs. Arrival Delay (Scatter Plot & Regression) -->
-          <div class="chart-card scatter-card">
+          <div class="chart-card scatter-card is-loading" id="scatterCard">
+            <div class="card-skeleton-overlay">
+              <div class="skeleton-shimmer" style="width: 200px; height: 16px; margin-bottom: 14px;"></div>
+              <div class="skeleton-scatter-wrap">
+                <div class="skeleton-scatter-canvas skeleton-shimmer">
+                  <div class="skeleton-scatter-line"></div>
+                </div>
+              </div>
+            </div>
             <div class="scatter-header">
               <h2 class="card-title">Departure Delay vs. Arrival Delay</h2>
               <span class="r2-badge" id="r2Badge">R² = 0.72</span>
@@ -476,11 +539,32 @@
 
         </section>
 
+
         <!-- Row 4: Bottom Operations & Machine Learning Prediction Row -->
         <section class="charts-row-bottom">
           
           <!-- Left Container: Operational Recommendations -->
-          <div class="chart-card recommendations-card">
+          <div class="chart-card recommendations-card is-loading" id="aiRecsCard">
+            <div class="card-skeleton-overlay">
+              <div class="skeleton-shimmer" style="width: 200px; height: 16px; margin-bottom: 14px;"></div>
+              <div class="skeleton-recs-grid">
+                <div class="skeleton-rec-card">
+                  <div class="skeleton-rec-header"><div class="skeleton-rec-icon skeleton-shimmer"></div><div class="skeleton-rec-title skeleton-shimmer"></div></div>
+                  <div class="skeleton-rec-line skeleton-shimmer" style="width: 95%;"></div>
+                  <div class="skeleton-rec-line skeleton-shimmer" style="width: 70%;"></div>
+                </div>
+                <div class="skeleton-rec-card">
+                  <div class="skeleton-rec-header"><div class="skeleton-rec-icon skeleton-shimmer"></div><div class="skeleton-rec-title skeleton-shimmer"></div></div>
+                  <div class="skeleton-rec-line skeleton-shimmer" style="width: 90%;"></div>
+                  <div class="skeleton-rec-line skeleton-shimmer" style="width: 80%;"></div>
+                </div>
+                <div class="skeleton-rec-card">
+                  <div class="skeleton-rec-header"><div class="skeleton-rec-icon skeleton-shimmer"></div><div class="skeleton-rec-title skeleton-shimmer"></div></div>
+                  <div class="skeleton-rec-line skeleton-shimmer" style="width: 88%;"></div>
+                  <div class="skeleton-rec-line skeleton-shimmer" style="width: 65%;"></div>
+                </div>
+              </div>
+            </div>
             <div class="card-header-with-action">
               <h2 class="card-title">Operational Recommendations</h2>
               <div class="rec-header-actions">
@@ -502,7 +586,20 @@
           </div>
 
           <!-- Right Container: Machine Learning Prediction Model Card -->
-          <div class="chart-card ml-model-card">
+          <div class="chart-card ml-model-card is-loading" id="mlModelCard">
+            <div class="card-skeleton-overlay">
+              <div class="skeleton-shimmer" style="width: 190px; height: 16px; margin-bottom: 14px;"></div>
+              <div class="skeleton-ml-body">
+                <div class="skeleton-ml-gauge skeleton-shimmer"></div>
+                <div class="skeleton-ml-bars">
+                  <div class="skeleton-ml-row"><div class="skeleton-ml-lbl skeleton-shimmer"></div><div class="skeleton-ml-bar skeleton-shimmer"></div></div>
+                  <div class="skeleton-ml-row"><div class="skeleton-ml-lbl skeleton-shimmer"></div><div class="skeleton-ml-bar skeleton-shimmer"></div></div>
+                  <div class="skeleton-ml-row"><div class="skeleton-ml-lbl skeleton-shimmer"></div><div class="skeleton-ml-bar skeleton-shimmer"></div></div>
+                  <div class="skeleton-ml-row"><div class="skeleton-ml-lbl skeleton-shimmer"></div><div class="skeleton-ml-bar skeleton-shimmer"></div></div>
+                  <div class="skeleton-ml-row"><div class="skeleton-ml-lbl skeleton-shimmer"></div><div class="skeleton-ml-bar skeleton-shimmer"></div></div>
+                </div>
+              </div>
+            </div>
             <div class="card-header-with-action">
               <div class="ml-card-title-wrap">
                 <svg class="ml-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -516,6 +613,7 @@
                 Test Flight
               </button>
             </div>
+
 
             <div class="ml-model-body">
               
