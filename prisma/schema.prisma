@@ -1,0 +1,44 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+generator client {
+  provider             = "prisma-client-py"
+  recursive_type_depth = 5
+}
+
+model Flight {
+  flightid          Int     @id @default(autoincrement())
+  flightdate        String
+  year              Int
+  month             Int
+  dayofmonth        Int
+  dayofweek         Int
+  reporting_airline String
+  origin            String
+  dest              String
+  crsdeptime        Int?
+  depdelay          Float?
+  crsarrtime        Int?
+  arrdelay          Float?
+  arrdel15          Int?
+  cancelled         Int     @default(0)
+  distance          Float?
+  carrierdelay      Float?
+  weatherdelay      Float?
+  nasdelay          Float?
+  securitydelay     Float?
+  lateaircraftdelay Float?
+  dephour           Int?
+
+  @@index([flightdate], name: "idx_date")
+  @@index([reporting_airline], name: "idx_airline")
+  @@index([origin], name: "idx_origin")
+  @@index([dest], name: "idx_dest")
+  @@index([dayofweek], name: "idx_dayofweek")
+  @@index([dephour], name: "idx_dephour")
+  @@index([month], name: "idx_month")
+  @@index([flightdate, reporting_airline, origin], name: "idx_composite")
+  @@map("flights")
+}

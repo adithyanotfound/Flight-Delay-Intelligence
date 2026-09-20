@@ -18,10 +18,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy Prisma schema and generate client
+COPY prisma/ ./prisma/
+RUN prisma generate
+
 # Copy application files
 COPY server.py .
 COPY dashboard/ ./dashboard/
-COPY data/flights.db ./data/flights.db
+COPY data/ ./data/
 
 # Expose port
 EXPOSE 5173

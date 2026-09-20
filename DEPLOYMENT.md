@@ -6,7 +6,7 @@ This guide covers the best ways to deploy the Flight Delay Analysis & OCC Intell
 
 ## Architecture Overview
 - **Backend**: Python Flask (`server.py`) powered by `gunicorn`.
-- **Database**: Embedded SQLite (`data/flights.db`, 98 MB, indexed across 598,700 records).
+- **Database**: Cloud Neon PostgreSQL via Prisma schema (`prisma/schema.prisma`) with all 598,700 records indexed (with local SQLite fallback).
 - **Frontend**: Vanilla HTML5, CSS3, ES6 JavaScript served directly by Flask from `dashboard/`.
 - **AI Engine**: OpenRouter API (`openai/gpt-4o-mini`) via environment variable `OPENROUTER_API_KEY`.
 

@@ -15,6 +15,13 @@ import numpy as np
 from flask import Flask, request, jsonify, send_from_directory
 from scipy import stats
 
+try:
+    import psycopg2
+    import psycopg2.extras
+    HAS_PSYCOPG2 = True
+except ImportError:
+    HAS_PSYCOPG2 = False
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DASHBOARD_DIR = os.path.join(BASE_DIR, "dashboard")
 DB_PATH = os.path.join(BASE_DIR, "data", "flights.db")
@@ -63,10 +70,126 @@ AIRLINES_INFO = {
     "OH": "PSA Airlines"
 }
 
+class SmartRow(dict):
+    """Case-insensitive dictionary that supports integer indexing and tuple unpacking."""
+    def __getitem__(self, key):
+        if isinstance(key, int):
+            return list(self.values())[key]
+        if isinstance(key, str):
+            for k, v in self.items():
+                if k.lower() == key.lower():
+                    return v
+        return super().get(key)
+
+    def __iter__(self):
+        return iter(self.values())
+
+    def get(self, key, default=None):
+        if isinstance(key, int):
+            try:
+                return list(self.values())[key]
+            except:
+                return default
+        if isinstance(key, str):
+            for k, v in self.items():
+                if k.lower() == key.lower():
+                    return v
+        return super().get(key, default)
+
+class UnifiedCursor:
+    def __init__(self, raw_cursor, is_pg):
+        self._cur = raw_cursor
+        self._is_pg = is_pg
+
+    def execute(self, query, params=None):
+        if params is None:
+            params = []
+        if self._is_pg:
+            pg_query = query.replace("?", "%s")
+            self._cur.execute(pg_query, params)
+        else:
+            self._cur.execute(query, params)
+        return self
+
+    def fetchone(self):
+        row = self._cur.fetchone()
+        if row is None:
+            return None
+        if self._is_pg:
+            return SmartRow(row)
+        return row
+
+    def fetchall(self):
+        rows = self._cur.fetchall()
+        if not rows:
+            return []
+        if self._is_pg:
+            return [SmartRow(r) for r in rows]
+        return rows
+
+    def __iter__(self):
+        if self._is_pg:
+            for r in self._cur:
+                yield SmartRow(r)
+        else:
+            for r in self._cur:
+                yield r
+
+class UnifiedConnection:
+    def __init__(self, raw_conn, is_pg):
+        self._conn = raw_conn
+        self._is_pg = is_pg
+
+    def cursor(self):
+        if self._is_pg:
+            raw_cur = self._conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        else:
+            raw_cur = self._conn.cursor()
+        return UnifiedCursor(raw_cur, self._is_pg)
+
+    def commit(self):
+        self._conn.commit()
+
+    def close(self):
+        try:
+            self._conn.close()
+        except:
+            pass
+
+def get_postgres_url():
+    if os.environ.get("POSTGRES_URL"):
+        return os.environ.get("POSTGRES_URL")
+    candidate_paths = [
+        os.path.join(BASE_DIR, ".env"),
+        os.path.join(BASE_DIR, "python", ".env")
+    ]
+    for p in candidate_paths:
+        if os.path.exists(p):
+            try:
+                with open(p, "r") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line.startswith("POSTGRES_URL="):
+                            k = line.split("=", 1)[1].strip().strip('"').strip("'")
+                            if k:
+                                return k
+            except:
+                pass
+    return None
+
 def get_db():
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
+    pg_url = get_postgres_url()
+    if HAS_PSYCOPG2 and pg_url:
+        try:
+            pg_raw = psycopg2.connect(pg_url)
+            return UnifiedConnection(pg_raw, is_pg=True)
+        except Exception as e:
+            print(f"[DB Warning] Could not connect to Neon PostgreSQL ({e}). Falling back to SQLite.")
+
+    sq_raw = sqlite3.connect(DB_PATH)
+    sq_raw.row_factory = sqlite3.Row
+    return UnifiedConnection(sq_raw, is_pg=False)
+
 
 def get_stored_api_key():
     if os.environ.get("OPENROUTER_API_KEY"):
@@ -99,7 +222,7 @@ def get_stored_api_key():
 @app.route("/api/options", methods=["GET"])
 def get_options():
     """Return available filter options, airlines, airports, and full date span."""
-    if not os.path.exists(DB_PATH):
+    if not get_postgres_url() and not os.path.exists(DB_PATH):
         return jsonify({"error": "Database not built yet"}), 500
 
     conn = get_db()
@@ -128,7 +251,7 @@ def get_options():
 @app.route("/api/filter", methods=["GET"])
 def filter_dashboard():
     """Real-time multi-dimensional aggregation across real multi-year BTS flight records."""
-    if not os.path.exists(DB_PATH):
+    if not get_postgres_url() and not os.path.exists(DB_PATH):
         return jsonify({"error": "Database not found"}), 500
 
     start_date = request.args.get("start_date", "2023-01-01")
@@ -568,7 +691,7 @@ def generate_recommendations():
 @app.route("/api/sync", methods=["POST"])
 def sync_latest_data():
     """Sync latest BTS archives and bridge records through September 20, 2026."""
-    if not os.path.exists(DB_PATH):
+    if not get_postgres_url() and not os.path.exists(DB_PATH):
         return jsonify({"error": "Database not found"}), 500
 
     conn = get_db()
